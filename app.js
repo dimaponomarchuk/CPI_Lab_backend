@@ -6,9 +6,11 @@ const logger = require('morgan');
 const http = require('http');
 
 const app = express();
+require('./routes')(app);
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cors());
 
 const port = parseInt(process.env.PORT, 10) || 3000;
 app.set('port', port);

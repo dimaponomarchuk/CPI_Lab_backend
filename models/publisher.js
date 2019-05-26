@@ -4,7 +4,9 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING
   }, {});
   publisher.associate = function(models) {
-    // associations can be defined here
+    publisher.belongsToMany(models.act, {
+      through: models.act_publisher
+    });
   };
   return publisher;
 };

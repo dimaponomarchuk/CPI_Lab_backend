@@ -4,7 +4,9 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING
   }, {});
   form.associate = function(models) {
-    // associations can be defined here
+    form.belongsToMany(models.act, {
+      through: models.act_form
+    });
   };
   return form;
 };

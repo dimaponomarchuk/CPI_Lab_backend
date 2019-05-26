@@ -14,7 +14,18 @@ module.exports = (sequelize, DataTypes) => {
     register_entry_end_date: DataTypes.DATE
   }, {});
   act.associate = function(models) {
-    // associations can be defined here
+    act.belongsToMany(models.country, {
+      through: models.act_country
+    });
+    act.belongsToMany(models.form, {
+      through: models.act_form
+    });
+    act.belongsToMany(models.publisher, {
+      through: models.act_publisher
+    });
+    act.belongsToMany(models.status, {
+      through: models.act_status
+    });
   };
   return act;
 };

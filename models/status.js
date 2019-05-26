@@ -4,7 +4,9 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING
   }, {});
   status.associate = function(models) {
-    // associations can be defined here
+    status.belongsToMany(models.act, {
+      through: models.act_status
+    });
   };
   return status;
 };
