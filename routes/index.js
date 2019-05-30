@@ -1,4 +1,4 @@
 module.exports = app => {
-    app.use('/act', require('./act'));
-    app.use('/user', require('./user'));
+    app.use('/acts', require('./act'));
+    app.use('/users', require('./user'));
 };

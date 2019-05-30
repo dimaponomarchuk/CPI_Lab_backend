@@ -25,3 +25,5 @@ router.delete(
   '/:act_id',
   actController.remove
 );
+
+module.exports = router;

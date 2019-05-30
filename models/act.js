@@ -1,6 +1,11 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const act = sequelize.define('act', {
+    act_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+    },
     name: DataTypes.STRING,
     text: DataTypes.TEXT,
     act_nubmer: DataTypes.STRING,
