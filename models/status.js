@@ -9,9 +9,7 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING
   }, {});
   status.associate = function(models) {
-    status.belongsToMany(models.act, {
-      through: models.act_status
-    });
+    status.belongsTo(models.act);
   };
   return status;
 };

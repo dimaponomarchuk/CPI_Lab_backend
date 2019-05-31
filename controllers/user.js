@@ -6,7 +6,7 @@ const getAll = asyncHandler(async(req, res) => {
 });
 
 const getById = asyncHandler(async(req, res) => {
-    res.status(200).json(await user.findOne({ where: { act_id: req.params.act_id } }));
+    res.status(200).json(await user.findOne({ where: { user_id: req.params.user_id } }));
 });
 
 const create = asyncHandler(async (req, res) => {

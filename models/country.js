@@ -9,9 +9,7 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING
   }, {});
   country.associate = function(models) {
-    country.belongsToMany(models.act, {
-      through: models.act_country
-    });
+    country.belongsTo(models.act);
   };
   return country;
 };

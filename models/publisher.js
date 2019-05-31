@@ -9,9 +9,7 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING
   }, {});
   publisher.associate = function(models) {
-    publisher.belongsToMany(models.act, {
-      through: models.act_publisher
-    });
+    publisher.belongsTo(models.act);
   };
   return publisher;
 };

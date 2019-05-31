@@ -6,6 +6,42 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       primaryKey: true,
     },
+    publisher_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'publishers',
+        key: 'publisher_id'
+      },
+      onUpdate: 'SET NULL',
+      onDelete: 'SET NULL'
+    },
+    form_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'forms',
+        key: 'form_id'
+      },
+      onUpdate: 'SET NULL',
+      onDelete: 'SET NULL'
+    },
+    status_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'statuses',
+        key: 'status_id'
+      },
+      onUpdate: 'SET NULL',
+      onDelete: 'SET NULL'
+    },
+    country_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'countries',
+        key: 'country_id'
+      },
+      onUpdate: 'SET NULL',
+      onDelete: 'SET NULL'
+    },
     name: DataTypes.STRING,
     text: DataTypes.TEXT,
     act_nubmer: DataTypes.STRING,
@@ -19,18 +55,10 @@ module.exports = (sequelize, DataTypes) => {
     register_entry_end_date: DataTypes.DATE
   }, {});
   act.associate = function(models) {
-    act.belongsToMany(models.country, {
-      through: models.act_country
-    });
-    act.belongsToMany(models.form, {
-      through: models.act_form
-    });
-    act.belongsToMany(models.publisher, {
-      through: models.act_publisher
-    });
-    act.belongsToMany(models.status, {
-      through: models.act_status
-    });
+    act.hasOne(models.country);
+    act.hasOne(models.form);
+    act.hasOne(models.publisher);
+    act.hasOne(models.status);
   };
   return act;
 };

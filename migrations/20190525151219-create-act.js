@@ -8,6 +8,42 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      publisher_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'publishers',
+          key: 'publisher_id'
+        },
+        onUpdate: 'SET NULL',
+        onDelete: 'SET NULL'
+      },
+      form_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'forms',
+          key: 'form_id'
+        },
+        onUpdate: 'SET NULL',
+        onDelete: 'SET NULL'
+      },
+      status_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'statuses',
+          key: 'status_id'
+        },
+        onUpdate: 'SET NULL',
+        onDelete: 'SET NULL'
+      },
+      country_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'countries',
+          key: 'country_id'
+        },
+        onUpdate: 'SET NULL',
+        onDelete: 'SET NULL'
+      },
       name: {
         type: Sequelize.STRING
       },

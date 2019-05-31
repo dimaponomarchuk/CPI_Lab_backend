@@ -7,7 +7,7 @@ router.get(
 );
 
 router.get(
-    '/:act_id',
+    '/:user_id',
     userController.getById
 );
 
@@ -17,12 +17,12 @@ router.post(
 );
 
 router.put(
-    '/:act_id',
+    '/:user_id',
     userController.update
 );
 
 router.delete(
-    '/:act_id',
+    '/:user_id',
     userController.remove
 );
 

@@ -9,9 +9,7 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING
   }, {});
   form.associate = function(models) {
-    form.belongsToMany(models.act, {
-      through: models.act_form
-    });
+    form.belongsTo(models.act);
   };
   return form;
 };
