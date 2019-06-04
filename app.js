@@ -1,5 +1,9 @@
+require('dotenv').config({
+    path: '.env.' + process.env.NODE_ENV
+});
+
 const express = require('express');
-const db = require('./models');
+const db = require('./db/models');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const logger = require('morgan');

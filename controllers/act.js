@@ -1,4 +1,4 @@
-const act = require('../models').act;
+const act = require('../db/models').act;
 const asyncHandler = require('../services/asyncHanlder');
 
 const getAll = asyncHandler(async(req, res) => {

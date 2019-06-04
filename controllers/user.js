@@ -1,4 +1,4 @@
-const user = require('../models').user;
+const user = require('../db/models').user;
 const asyncHandler = require('../services/asyncHanlder');
 
 const getAll = asyncHandler(async(req, res) => {
