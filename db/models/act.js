@@ -4,6 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     act_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      autoIncrement: true,
       primaryKey: true,
     },
     publisher_id: {

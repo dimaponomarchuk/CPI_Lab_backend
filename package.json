@@ -24,6 +24,7 @@
     "cross-env": "^5.2.0",
     "dotenv": "^8.0.0",
     "express": "^4.17.0",
+    "express-mysql-session": "^2.1.0",
     "express-session": "^1.16.1",
     "http": "0.0.0",
     "lodash": "^4.17.11",

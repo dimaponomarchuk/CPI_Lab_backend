@@ -4,11 +4,13 @@ module.exports = (sequelize, DataTypes) => {
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      autoIncrement: true,
       primaryKey: true,
     },
     login: DataTypes.STRING,
     email: DataTypes.STRING,
-    password: DataTypes.STRING
+    password: DataTypes.STRING,
+    rights: DataTypes.INTEGER(11)
   }, {});
   user.associate = function(models) {
     // associations can be defined here

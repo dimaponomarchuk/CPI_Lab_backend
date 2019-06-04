@@ -4,6 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     form_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      autoIncrement: true,
       primaryKey: true,
     },
     name: DataTypes.STRING
