@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING
   }, {});
   form.associate = function(models) {
-    form.belongsTo(models.act);
+    // form.belongsTo(models.act);
   };
   return form;
 };

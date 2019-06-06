@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING
   }, {});
   country.associate = function(models) {
-    country.belongsTo(models.act);
+    // country.belongsTo(models.act);
   };
   return country;
 };

@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING
   }, {});
   publisher.associate = function(models) {
-    publisher.belongsTo(models.act);
+    // publisher.belongsTo(models.act);
   };
   return publisher;
 };

@@ -10,7 +10,10 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING
   }, {});
   status.associate = function(models) {
-    status.belongsTo(models.act);
+    status.hasOne(models.act, {
+      foreignKey: 'act_id'
+    });
+    // status.belongsTo(models.act);
   };
   return status;
 };

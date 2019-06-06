@@ -1,6 +1,6 @@
 const actController = require('../controllers').act;
 const router = require('express').Router();
-const authenticateMiddleware = require('../middlewares/authenticateMiddlerware');
+// const authenticateMiddleware = require('../middlewares/authenticateMiddlerware');
 
 router.get(
   '/',
@@ -14,19 +14,19 @@ router.get(
 
 router.post(
   '/',
-  authenticateMiddleware(),
+  // authenticateMiddleware(),
   actController.create
 );
 
 router.put(
   '/:act_id',
-  authenticateMiddleware(),
+  // authenticateMiddleware(),
   actController.update
 );
 
 router.delete(
   '/:act_id',
-  authenticateMiddleware(),
+  // authenticateMiddleware(),
   actController.remove
 );
 

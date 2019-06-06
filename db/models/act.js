@@ -56,10 +56,13 @@ module.exports = (sequelize, DataTypes) => {
     register_entry_end_date: DataTypes.DATE
   }, {});
   act.associate = function(models) {
-    act.hasOne(models.country);
-    act.hasOne(models.form);
-    act.hasOne(models.publisher);
-    act.hasOne(models.status);
+    act.belongsTo(models.status, {
+      foreignKey: 'status_id',
+    });
+    // act.hasOne(models.country);
+    // act.hasOne(models.form);
+    // act.hasOne(models.publisher);
+    // act.hasOne(models.status);
   };
   return act;
 };
