@@ -50,10 +50,10 @@ module.exports = {
       text: {
         type: Sequelize.TEXT
       },
-      act_nubmer: {
+      act_number: {
         type: Sequelize.STRING
       },
-      reg_nubmer: {
+      reg_number: {
         type: Sequelize.STRING
       },
       act_code: {

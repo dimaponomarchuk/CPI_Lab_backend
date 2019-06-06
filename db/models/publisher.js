@@ -10,7 +10,9 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING
   }, {});
   publisher.associate = function(models) {
-    // publisher.belongsTo(models.act);
+    publisher.hasOne(models.act, {
+      foreignKey: 'act_id'
+    });
   };
   return publisher;
 };

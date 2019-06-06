@@ -2,7 +2,7 @@ const form = require('../db/models').form;
 const asyncHandler = require('../services/asyncHanlder');
 
 const getAll = asyncHandler(async(req, res) => {
-    res.status(200).json(await form.findAll({}));
+    res.status(200).json(await form.findAll());
 });
 
 const getById = asyncHandler(async(req, res) => {

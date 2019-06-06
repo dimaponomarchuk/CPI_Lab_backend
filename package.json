@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Crazzzybanana/CPI_Lab_backend#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "clock": "^1.0.2",
     "cookie-parser": "^1.4.4",
     "cors": "^2.8.5",
     "cross-env": "^5.2.0",

@@ -13,7 +13,6 @@ module.exports = (sequelize, DataTypes) => {
     status.hasOne(models.act, {
       foreignKey: 'act_id'
     });
-    // status.belongsTo(models.act);
   };
   return status;
 };

@@ -13,7 +13,6 @@ module.exports = (sequelize, DataTypes) => {
     rights: DataTypes.INTEGER(11)
   }, {});
   user.associate = function(models) {
-    // associations can be defined here
   };
   return user;
 };

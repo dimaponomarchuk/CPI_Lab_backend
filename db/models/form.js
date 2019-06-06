@@ -10,7 +10,9 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING
   }, {});
   form.associate = function(models) {
-    // form.belongsTo(models.act);
+    form.hasOne(models.act, {
+      foreignKey: 'act_id'
+    });
   };
   return form;
 };

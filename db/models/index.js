@@ -22,7 +22,7 @@ if (config.use_env_variable) {
       {
         host: config.host,
         dialect: config.dialect,
-        // logging: false
+        logging: false
       }
   );
 }

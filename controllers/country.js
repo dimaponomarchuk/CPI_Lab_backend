@@ -2,7 +2,7 @@ const country = require('../db/models').country;
 const asyncHandler = require('../services/asyncHanlder');
 
 const getAll = asyncHandler(async(req, res) => {
-    res.status(200).json(await country.findAll({}));
+    res.status(200).json(await country.findAll());
 });
 
 const getById = asyncHandler(async(req, res) => {

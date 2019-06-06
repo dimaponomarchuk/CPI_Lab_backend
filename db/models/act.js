@@ -45,8 +45,8 @@ module.exports = (sequelize, DataTypes) => {
     },
     name: DataTypes.STRING,
     text: DataTypes.TEXT,
-    act_nubmer: DataTypes.STRING,
-    reg_nubmer: DataTypes.STRING,
+    act_number: DataTypes.STRING,
+    reg_number: DataTypes.STRING,
     act_code: DataTypes.STRING,
     adoption_start_date: DataTypes.DATE,
     adoption_end_date: DataTypes.DATE,
@@ -59,10 +59,15 @@ module.exports = (sequelize, DataTypes) => {
     act.belongsTo(models.status, {
       foreignKey: 'status_id',
     });
-    // act.hasOne(models.country);
-    // act.hasOne(models.form);
-    // act.hasOne(models.publisher);
-    // act.hasOne(models.status);
+    act.belongsTo(models.country, {
+      foreignKey: 'country_id',
+    });
+    act.belongsTo(models.form, {
+      foreignKey: 'form_id',
+    });
+    act.belongsTo(models.publisher, {
+      foreignKey: 'publisher_id',
+    });
   };
   return act;
 };
