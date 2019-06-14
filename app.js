@@ -11,6 +11,7 @@ const logger = require('morgan');
 const http = require('http');
 const passport = require('passport');
 const session = require('express-session');
+const helmet = require('helmet');
 const MySQLStore = require('express-mysql-session')(session);
 
 const sessionStore = new MySQLStore({
@@ -31,11 +32,18 @@ app.use(cors());
 app.use(session({
     store: sessionStore,
     secret: process.env.SESSION_SECRET,
-    resave: false,
-    saveUninitialized: false
+    resave: true,
+    rolling: true,
+    saveUninitialized: false,
+    cookie: {
+        maxAge: 10 * 60 * 1000,
+        httpOnly: false,
+    },
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+require('./services/authenticate')(passport);
+app.use(helmet());
 
 require('./routes')(app);
 const port = parseInt(process.env.PORT, 10) || 3000;
